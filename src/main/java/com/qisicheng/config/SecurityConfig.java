@@ -13,17 +13,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @Date 31/01/2022 11:21
  */
 //@Configuration
-//public class SecurityConfig extends WebSecurityConfigurerAdapter {
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        PasswordEncoder passwordEncoder = passwordEncoder();
-//        String encode = passwordEncoder.encode("123");
-//        auth.inMemoryAuthentication().withUser("luck").password(encode).roles("admin");
-//    }
-//    @Bean
-//    PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-//
-//}
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        PasswordEncoder passwordEncoder = passwordEncoder();
+        String encode = passwordEncoder.encode("123");
+        auth.inMemoryAuthentication().withUser("luck").password(encode).roles("admin");
+    }
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+}
